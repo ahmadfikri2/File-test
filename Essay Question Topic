@@ -1,0 +1,131 @@
+Jawaban untuk no 3
+#koneksi ke database
+<?php
+$server="localhost";
+$username="root";
+$name_db="db_pengguna";
+$conn=mysqli_connect($server,$username,$name_db);
+?>
+----------------------------------------
+#tampilan login
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources> // string xml
+    <string name="app_name">AndroidLoginAndRegistration</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="register_caption">No account yett? Create one</string>
+</resouces>
+<resources> //color.xml
+  <color name="colorPrimary">#2196F3</color>
+    <color name="colorPrimaryDark">#1565C0</color>
+    <color name="colorAccent">#1976D2</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorGray">#E5E5E5</color>
+    <color name="colorText">#8A8A8A</color>
+</resources>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00008B"
+    tools:context="com.example.lenovo.myapp.WelcomeActivity">
+    
+    <imageview
+      android:id="@+id/imageview2"
+      android:layout_width="100dp"
+      android:layout_height="100dp"
+      android:layout_marginTop="33dp"
+      app:srcCompat="@drawable/gambar"
+      android:layout_alignparentTop="true"
+      android:layout_centerHorizontal="true"/>
+    <Textview
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:text="VERSION - V4"
+       android:textSize="20dp"
+       android:textStyle="bold"
+       android:textAlignment="center"
+       android:textColor="@color/colorWhite"
+       android:textColorHint="@color/colorWhite"
+       android:id="@+id/textView4"
+       android:layout_below="@+id/imageview2"
+       android:layout_alignParentEnd="true"
+       android:layout_marginTop="18dp"
+       
+    <EditText //tampilan ketik username
+       android:layout_width="300dp"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="19dp"
+       android:hint="Email"
+       android:textSize="15dp"
+       android:textColor="@color/colorWhite"
+       android:textColorHint="@color/colorWhite"
+       android:layout_below="@+id/imageview4"
+       android:layout_centerHorizontal="true"
+       android:id="@+id/editText"
+       
+    <EditText //tampilan ketik password
+       android:layout_width="300dp"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="10dp"
+       android:hint="Password"
+       android:textSize="15dp"
+       android:textColor="@color/colorWhite"
+       android:textColorHint="@color/colorWhite"
+       android:layout_below="@+id/editText"
+       android:layout_alignStart="@+id/editText"
+       android:layout_centerHorizontal="true"
+       android:id="@+id/editText2"
+       
+    <Button
+       android:layout_width="300dp"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="14dp"
+       android:hint="Log In"
+       android:background="#88D8C7"
+       android:textStyle="bold"
+       android:layout_below="@+id/editText2"
+       android:layout_alignStart="@+id/editText2"
+       android:id="@+id/button
+ </Relativelayout>
+ 
+ ----------------------
+ 
+ Code koneksi PHP
+<?php
+  $server = "localhost";
+  $username = "admin";
+  $password = "";
+  $name_db = "db_android";
+  $conn = mysqli_connect($server, $username, $password,$name_db);
+?>
+
+--------------------------
+Proses login
+public class proses_login extends AsyncTask<String,Void,String> {
+  private String url_proses_login = "http://ip-kalian/proses_android/proses_login.php"; // link proseslogin di php
+    Context context;
+    ProgressDialog progressDialog;
+    Activity activity;
+    AlertDialog.Builder builder;
+  public proses_crud(Context context) {
+    this.context = context;
+    activity = (Activity) context;
+  }
+@Override
+  protected void onPreExecute() {
+  super.onPreExecute();
+  builder = new AlertDialog.Builder(activity);
+  progressDialog = new ProgressDialog(context);
+  progressDialog.setIndeterminate(true);
+  progressDialog.setCancelable(false);
+  progressDialog.show();
+}
+       
+      
+      
